@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Player Names</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="input-bg">  
+    <div class="input-container">
+        <h1>Enter Player Names</h1>
+        <input type="text" id="player1" placeholder="Player 1 Name">
+        
+
+
+
+        <input type="text" id="player2" placeholder="Player 2 Name">
+        
+
+
+
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script>
+        function startGame() {
+            let player1 = document.getElementById("player1").value;
+            let player2 = document.getElementById("player2").value;
+            if (player1 && player2) {
+                localStorage.setItem("player1", player1);
+                localStorage.setItem("player2", player2);
+                window.location.href = "game.html";
+            } else {
+                alert("Please enter both names!");
+            }
+        }
+    </script>
+</body>
+</html>

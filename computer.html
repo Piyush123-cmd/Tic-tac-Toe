@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play with Computer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="input-bg">  
+    <div class="input-container">
+        <h1>Enter Your Name</h1>
+        <input type="text" id="player1" placeholder="Your Name">
+        <button onclick="startComputerGame()">Start Game</button>
+    </div>
+
+    <script>
+        function startComputerGame() {
+            let player1 = document.getElementById("player1").value;
+            if (player1) {
+                localStorage.setItem("player1", player1);
+                localStorage.setItem("player2", "Computer"); // Computer as second player
+                window.location.href = "computer_game.html";
+            } else {
+                alert("Please enter your name!");
+            }
+        }
+    </script>
+</body>
+</html>
